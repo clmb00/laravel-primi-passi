@@ -16,7 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
 
     $msg = 'Hello';
-    $user = 'john';
 
-    return view('home', compact('msg','user'));
+    $data = [
+        'name' => 'John',
+        'surname' => 'Dove',
+        'age' => '37',
+        'email' => 'dove.john77@mail.com',
+        'role' => 'CEO',
+        'hobbies' => ['Cars', 'Soccer', 'Books']
+    ];
+
+    return view('home', compact('msg','data'));
+});
+
+Route::get('/about-me', function(){
+
+    $img = 'https://i.picsum.photos/id/19/400/400.jpg?hmac=v2_t0RlKnDVx_OlDdbfL5SzRrBPOxzYMOYLbqWjour0';
+
+    return view('about-me', compact('img'));
 });
