@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+
+    $msg = 'Hello';
+    $user = 'john';
+
+    return view('home', compact('msg','user'));
 });
